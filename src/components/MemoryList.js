@@ -14,17 +14,19 @@ function MemoryList(props) {
 			<React.Fragment>
 				<hr />
 				{memories.map((memory) => {
+					console.log(memories);
 					return (
 						<Memory
 							whenMemoryClicked={props.onMemorySelection}
 							title={memory.title}
 							date={memory.date}
 							description={memory.description}
+              timeOpen={memory.timeOpen}
               place={memory.place}    
               vibe={memory.vibe}
               scents={memory.scents}
               keywords={memory.keywords}
-              timeOpen={memory.timeOpen}
+              formattedWaitTime={memory.formattedWaitTime}
 							id={memory.id}
 							key={memory.id}
 						/>

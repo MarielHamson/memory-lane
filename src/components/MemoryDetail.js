@@ -13,8 +13,9 @@ function MemoryDetail(props){
       <p>place: {memory.place}</p>
       <p>vibe: {memory.vibe} </p>
       <p>scents: {memory.scents}</p>
+      <p>timeOpen: {memory.timeOpen}</p>
       <p>keywords: {memory.keywords}</p>
-      <Button variant='outline-info' onClick={ props.onClickingEdit }>Update Memory</Button>
+      <Button className='mr-2' variant='outline-info' onClick={ props.onClickingEdit }>Update Memory</Button>
       <Button variant='outline-danger' onClick={()=> onClickingDelete(memory.id) }>Delete Memory</Button>
       <hr/>
     </React.Fragment>
