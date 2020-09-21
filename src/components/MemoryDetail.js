@@ -9,12 +9,12 @@ function MemoryDetail(props){
     <React.Fragment>
       <h1>Memory Detail</h1>
       <h2>{memory.title} - {memory.date}</h2>
-      <p>description={memory.description}</p>
-      <p>place={memory.place}</p>
-      <p>vibe={memory.vibe} </p>
-      <p>scents={memory.scents}</p>
-      <p>keywords={memory.keywords}</p>
-      <Button variant='outline-info' onClick={ props.onClickingEdit }>Update Dream</Button>
+      <p>description: {memory.description}</p>
+      <p>place: {memory.place}</p>
+      <p>vibe: {memory.vibe} </p>
+      <p>scents: {memory.scents}</p>
+      <p>keywords: {memory.keywords}</p>
+      <Button variant='outline-info' onClick={ props.onClickingEdit }>Update Memory</Button>
       <Button variant='outline-danger' onClick={()=> onClickingDelete(memory.id) }>Delete Memory</Button>
       <hr/>
     </React.Fragment>

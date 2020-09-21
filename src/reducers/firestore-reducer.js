@@ -1,5 +1,6 @@
 import { firestoreReducer } from 'redux-firestore';
+import { combineReducers } from 'redux';
 
-const fireReducer = { firestore: firestoreReducer }
+const fireReducer = combineReducers({ firestore: firestoreReducer });
 
 export default fireReducer;

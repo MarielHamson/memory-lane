@@ -34,19 +34,19 @@ function ReusableForm(props) {
         </Form.Group>
         <Form.Group>
           <Form.Control
-            as='text'
+            type='text'
             name='vibe'
             placeholder='What was the vibe?' />
         </Form.Group>
         <Form.Group>
           <Form.Control
-            as='text'
+            type='text'
             name='scents'
             placeholder='Any smells associated with the memory?' />
         </Form.Group>
         <Form.Group>
           <Form.Control
-            as='text'
+            type='text'
             name='keywords'
             placeholder='Any keywords?' />
         </Form.Group>

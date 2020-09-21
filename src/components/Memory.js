@@ -7,7 +7,7 @@ function Memory(props) {
       <div onClick = {()=> props.whenMemoryClicked(props.id)}>
         <h3>{props.title} - {props.date}</h3>
         <h5>{props.place}</h5>
-        <h5>{props.timeOpen}</h5>
+        {/* <h5>{props.timeOpen}</h5> */}
       </div>
     </React.Fragment>
   )

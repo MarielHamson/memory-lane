@@ -21,16 +21,13 @@ class MemoryControl extends React.Component {
   handleClick = () => {
     if (this.state.selectedMemory != null) {
       this.setState({
-        formVisibleOnPage: false,
         selectedMemory: null,
         editing: false
       });
     } else {
-      this.setState(
-        this.setState(prevState => ({
-          formVisibleOnPage: !prevState.formVisibleOnPage
-        }))
-      );
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage
+      }));
     }
   }
 
@@ -77,7 +74,7 @@ class MemoryControl extends React.Component {
     let buttonText = null;
     if (this.state.editing) {
       currentlyVisibleState = (<EditMemoryForm
-      memory = {this.state.selectedMemory}
+        memory = {this.state.selectedMemory}
         onEditMemory={this.handleEditingMemoryInList} />
       );
       buttonText = "Return to Memory List";
@@ -87,12 +84,12 @@ class MemoryControl extends React.Component {
         onClickingDelete = {this.handleDeleteMemory}
         onClickingEdit = {this.handleEditClick} />
       buttonText = "Return to Memory List";
-    } else if (this.props.formVisibleOnPage) {
-      currentlyVisibleState = <NewMemoryForm onNewMemoryCreation = {this.handleAddMemoryToList} />
+    } else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = (<NewMemoryForm onNewMemoryCreation = {this.handleAddMemoryToList} />)
       buttonText = "Return to Memory List";
     } else {
-      currentlyVisibleState = <MemoryList 
-        onMemorySelection = {this.handleChangingSelectedMemory} />
+      currentlyVisibleState = (<MemoryList
+        onMemorySelection={this.handleChangingSelectedMemory} />);
       buttonText = "Add Memory";
     }
     return(
