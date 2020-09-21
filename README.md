@@ -94,14 +94,11 @@ MIT
 > LinkedIn [MarielHamson](https://www.linkedin.com/MarielHamson) &nbsp;&middot;&nbsp;
 > GitHub [MarielHamson](https://github.com/MarielHamson) &nbsp;&middot;&nbsp;
 > Instagram [Miriquitecontrary](https://instagram.com/miriquitecontrary)
+
 ## Frederick Ernest
 > LinkedIn [FrederickErnest](https://www.linkedin.com/in/frederick-ernest/) &nbsp;&middot;&nbsp;
-> GitHub [FrederickErnest] (https://github.com/fetonecontrol?tab=repositories) &nbsp;&middot;&nbsp;
+> GitHub [FrederickErnest](https://github.com/fetonecontrol/) 
 
 ## Benjamin Russell
-> LinkedIn [Benjamin Russell](https://www.linkedin.com/in/ben-russell36/)&nbsp;&middot;&nbsp;
+> LinkedIn [Benjamin Russell](https://www.linkedin.com/in/ben-russell36/) &nbsp;&middot;&nbsp;
 > GitHub [Benjamin Russell](https://github.com/brussell36)
-
-```
-
-```
