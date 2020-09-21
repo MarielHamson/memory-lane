@@ -16,7 +16,8 @@ Memory.propTypes = {
   title: PropTypes.string,
   date: PropTypes.string,
   place: PropTypes.string,
-  id: PropTypes.string
+  id: PropTypes.string,
+  whenMemoryClicked: PropTypes.func
 }
 
 export default Memory;
