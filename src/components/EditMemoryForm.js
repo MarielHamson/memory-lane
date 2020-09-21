@@ -1,40 +1,42 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ReusableForm from './ReusableForm';
+import PropTypes from 'prop-types';
 import { useFirestore } from 'react-redux-firebase';
 
-function NewMemoryForm(props) {
+function EditMemoryForm(props) {
 	const firestore = useFirestore();
+	const { memory } = props;
 
-	function addMemoryToFirestore(event) {
+	function handleEditMemoryFormSubmission(event) {
 		event.preventDefault();
-		props.onNewMemoryCreation();
-
-		return firestore.collection('memories').add({
+		props.onEditMemory();
+		const propertiesToUpdate = {
 			title: event.target.title.value,
 			date: event.target.date.value,
 			description: event.target.description.value,
-      timeOpen: firestore.FieldValue.serverTimestamp(),
       place: event.target.place.value, 
       vibe: event.target.vibe.value,
       scents: event.target.scents.value,
       keywords: event.target.keywords.value,
-		});
+		};
+		return firestore.update(
+			{ collection: 'memories', doc: memory.id },
+			propertiesToUpdate
+		);
 	}
 
 	return (
 		<React.Fragment>
 			<ReusableForm
-				// Don't forget to change the name of the function here as well.
-				formSubmissionHandler={addMemoryToFirestore}
-				buttonText="Remember for me!"
+				formSubmissionHandler={handleEditMemoryFormSubmission}
+				buttonText="Update Memory"
 			/>
 		</React.Fragment>
 	);
 }
 
-NewMemoryForm.propTypes = {
-	onNewMemoryCreation: PropTypes.func,
+EditMemoryForm.propTypes = {
+	onEditMemory: PropTypes.func,
 };
 
-export default NewMemoryForm;
+export default EditMemoryForm;

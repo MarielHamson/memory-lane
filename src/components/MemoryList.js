@@ -24,6 +24,7 @@ function MemoryList(props) {
               vibe={memory.vibe}
               scents={memory.scents}
               keywords={memory.keywords}
+              timeOpen={memory.timeOpen}
 							id={memory.id}
 							key={memory.id}
 						/>
