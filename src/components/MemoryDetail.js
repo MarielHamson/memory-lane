@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
 
 function MemoryDetail(props){
   const { memory, onClickingDelete } = props;
@@ -13,11 +14,11 @@ function MemoryDetail(props){
       <p>vibe={memory.vibe} </p>
       <p>scents={memory.scents}</p>
       <p>keywords={memory.keywords}</p>
-      <button onClick={ props.onClickingEdit }>Update Dream</button>
-      <button onClick={()=> onClickingDelete(memory.id) }>Delete Memory</button>
+      <Button variant='outline-info' onClick={ props.onClickingEdit }>Update Dream</Button>
+      <Button variant='outline-danger' onClick={()=> onClickingDelete(memory.id) }>Delete Memory</Button>
       <hr/>
     </React.Fragment>
-  )
+  ) 
 }
 
 MemoryDetail.propTypes = {
