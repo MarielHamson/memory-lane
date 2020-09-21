@@ -43,6 +43,7 @@ class MemoryControl extends React.Component {
         title:  memory.get("title"),
         date:  memory.get("date"),
         description:  memory.get("desciption"),
+        timeOpen: memory.get('timeOpen'),
         place:  memory.get("place"),
         vibe:  memory.get("vibe"),
         scents:  memory.get("scents"),
