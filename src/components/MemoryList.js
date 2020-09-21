@@ -20,7 +20,7 @@ function MemoryList(props) {
 							title={memory.title}
 							date={memory.date}
 							description={memory.description}
-              place={memory.place}
+              place={memory.place}    
               vibe={memory.vibe}
               scents={memory.scents}
               keywords={memory.keywords}
