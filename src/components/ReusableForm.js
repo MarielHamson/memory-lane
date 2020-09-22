@@ -5,15 +5,18 @@ import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ReusableForm(props) {
+
+  const { memoryTitle } = props;
+
   return (
     <React.Fragment>
       <Form onSubmit={props.formSubmissionHandler}>
-        <Form.Group>
+        <Form.Group controlId = 'memoryTitle'>
           <Form.Control
             type='text'
             name='title'
-            placeholder={props.title}
-            value= {props.title}
+            placeholder= 'Title'
+            defaultValue= {memoryTitle}
             />
         </Form.Group>
         <Form.Group>
@@ -63,7 +66,8 @@ function ReusableForm(props) {
 
 ReusableForm.propTypes = {
   formSubmissionHandler: PropTypes.func,
-  buttonText: PropTypes.string
+  buttonText: PropTypes.string,
+  memoryTitle: PropTypes.string
 };
 
 export default ReusableForm;

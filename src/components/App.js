@@ -4,8 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Header from './Header';
 import Signin from "./Signin";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-//https://serverless-stack.com/chapters/redirect-on-login-and-logout.html
-//https://medium.com/better-programming/https-medium-com-clairechabas-auth-with-firebase-for-react-redux-apps-from-0-to-1-104e7343521b
 
 function App(){
   
