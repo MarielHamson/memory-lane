@@ -50,9 +50,7 @@ function ReusableForm(props) {
             name='keywords'
             placeholder='Any keywords?' />
         </Form.Group>
-        <div style={{padding: 10}}>
-          <Button variant="info" type='submit'>{props.buttonText}</Button>
-        </div>
+          <Button className='mb-2' variant="info" type='submit'>{props.buttonText}</Button>
       </Form>
     </React.Fragment>
   );

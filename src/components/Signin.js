@@ -3,7 +3,10 @@ import firebase from "firebase/app";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+// import LinkButton from './LinkButton'
+import { useHistory } from "react-router-dom";
+
 
 function Signin(){
   function doSignUp(event){
@@ -23,6 +26,7 @@ function Signin(){
     const password = event.target.signinPassword.value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
       console.log("Successfully signed in!");
+      history.push("/");
     }).catch(function(error) {
       console.log(error.message);
     });
@@ -31,10 +35,23 @@ function Signin(){
   function doSignOut() {
     firebase.auth().signOut().then(function() {
       console.log("Successfully signed out!");
+      history.push("/");
     }).catch(function(error) {
       console.log(error.message);
     });
   }
+
+  let history = useHistory();
+
+  // async function handleClick(event) {
+  //   event.preventDefault();
+  //   try {
+  //     await firebase.auth().signIn().then(function() {
+  //     history.push("/");
+  //     })} catch (error) {
+  //     alert(error.message);
+  //   }
+  // }
 
   return (
     <React.Fragment>
@@ -53,12 +70,12 @@ function Signin(){
               name='password'
               placeholder='Password'/>
           </Form.Group>
-
           <Button variant='primary' type='submit'>Sign up</Button>
+          <hr/>
           <h1>Sign Out</h1>
           <Button variant='warning' onClick={doSignOut}>Sign out</Button>
         </Form>
-
+        <hr/>
         <h1>Sign In</h1>
         <Form onSubmit={doSignIn}>
           <Form.Group>
@@ -73,11 +90,20 @@ function Signin(){
               name='signinPassword'
               placeholder='Password' />
           </Form.Group>
-          <Button as={Link} to="/" variant='info' type='submit'>Sign in</Button>
+          
+          {/* <LinkButton to="/" variant='info' type='submit'>Sign in</LinkButton> */}
+          {/* <Link to='/'>
+            <button type="submit" variant="info">Submit</button>
+          </Link> */}
+          {/* <Link to='/'>
+          <button as={Link} to='/' variant='info' type='submit'>Sign in</button>
+          </Link> */}
+          
+          <Button type="submit" variant="info">Sign in</Button>
         </Form>
       </Container>
     </React.Fragment>
   );
 }
-
+// onClick={() => history.goBack('/')}history.push("/home")
 export default Signin;

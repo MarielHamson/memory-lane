@@ -14,7 +14,6 @@ function Header(props) {
     <React.Fragment>
       <Navbar style={{backgroundColor: 'rgba(255, 255, 255, .5)', boxShadow: '0 5px 15px rgba(0, 0, 0, .5)'}} sticky="top" expand="lg">
       <Navbar.Brand as ={Link} to="/">Memory Lane</Navbar.Brand>
-      {/* <Link to="/">Memory Lane</Link> */}
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">

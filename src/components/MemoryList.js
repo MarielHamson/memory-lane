@@ -16,7 +16,7 @@ function MemoryList(props) {
 				<h1 style={{textAlign: 'center'}}>Memory Lane</h1>
 				<hr />
 				{memories.map((memory) => {
-					console.log(memories);
+					// console.log(memories);
 					return (
 						<Memory
 							whenMemoryClicked={props.onMemorySelection}
