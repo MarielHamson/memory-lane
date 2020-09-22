@@ -12,25 +12,30 @@ function ReusableForm(props) {
           <Form.Control
             type='text'
             name='title'
-            placeholder='Title' />
+            placeholder={props.title}
+            value= {props.title}
+            />
         </Form.Group>
         <Form.Group>
           <Form.Control
             type='date'
             name='date'
-            placeholder='Enter the date.' />
+            placeholder='Enter the date.'
+            defaultValue= {props.date} />
         </Form.Group>
         <Form.Group>
           <Form.Control
             type='text'
             name='place'
-            placeholder='Place' />
+            placeholder='Place'
+            defaultValue={props.place}/>
         </Form.Group>
         <Form.Group>
           <Form.Control
             as='textarea'
             name='description'
-            placeholder='Describe your memory.' />
+            placeholder='Describe your memory.' 
+            />
         </Form.Group>
         <Form.Group>
           <Form.Control

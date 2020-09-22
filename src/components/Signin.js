@@ -43,16 +43,6 @@ function Signin(){
 
   let history = useHistory();
 
-  // async function handleClick(event) {
-  //   event.preventDefault();
-  //   try {
-  //     await firebase.auth().signIn().then(function() {
-  //     history.push("/");
-  //     })} catch (error) {
-  //     alert(error.message);
-  //   }
-  // }
-
   return (
     <React.Fragment>
       <Container className="container">
