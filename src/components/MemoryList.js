@@ -13,6 +13,7 @@ function MemoryList(props) {
 	if (isLoaded(memories)) {
 		return (
 			<React.Fragment>
+				<h1 style={{textAlign: 'center'}}>Memory Lane</h1>
 				<hr />
 				{memories.map((memory) => {
 					console.log(memories);

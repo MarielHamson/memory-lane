@@ -122,7 +122,7 @@ class MemoryControl extends React.Component {
       return(
         <React.Fragment>
           {currentlyVisibleState}
-          <Button variant="outline-primary" onClick={this.handleClick}>{buttonText}</Button>
+          <Button variant="primary" onClick={this.handleClick}>{buttonText}</Button>
         </React.Fragment>
       )
     }

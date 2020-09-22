@@ -12,8 +12,9 @@ const {doSignOut} = Signin;
 function Header(props) {
   return (
     <React.Fragment>
-      <Navbar style={{backgroundColor: 'rgba(245, 245, 245, 0.75)'}} sticky="top" expand="lg">
+      <Navbar style={{backgroundColor: 'rgba(255, 255, 255, .5)', boxShadow: '0 5px 15px rgba(0, 0, 0, .5)'}} sticky="top" expand="lg">
       <Navbar.Brand as ={Link} to="/">Memory Lane</Navbar.Brand>
+      {/* <Link to="/">Memory Lane</Link> */}
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
@@ -29,10 +30,10 @@ function Header(props) {
         </Nav>
         <Form inline>
           <Form.Control type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-success">Search</Button>
+          <Button variant="success">Search</Button>
         </Form>
         <Form inline>
-          <Button onClick={doSignOut} variant="outline-success" className='ml-2'>Sign Out</Button>
+          <Button onClick={doSignOut} variant="success" className='ml-2'>Sign Out</Button>
         </Form>
         </Navbar.Collapse>
       </Navbar>

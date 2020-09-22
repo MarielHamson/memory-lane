@@ -16,7 +16,7 @@ function ReusableForm(props) {
         </Form.Group>
         <Form.Group>
           <Form.Control
-            type='text'
+            type='date'
             name='date'
             placeholder='Enter the date.' />
         </Form.Group>

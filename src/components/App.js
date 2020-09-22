@@ -10,13 +10,13 @@ function App(){
   
   return ( 
     <Router>
-      <Header />
+      <Header className="header"/>
       <Switch>
         <Route path="/signin">
           <Signin />
         </Route>
         <Route path="/">
-        <Container>
+        <Container className="container">
           <MemoryControl />
         </Container>
         </Route>

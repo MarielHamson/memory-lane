@@ -38,7 +38,7 @@ function Signin(){
 
   return (
     <React.Fragment>
-      <Container>
+      <Container className="container">
         <h1>Sign Up</h1>
         <Form onSubmit={doSignUp}>
           <Form.Group>
@@ -54,9 +54,9 @@ function Signin(){
               placeholder='Password'/>
           </Form.Group>
 
-          <Button variant='outline-primary' type='submit'>Sign up</Button>
+          <Button variant='primary' type='submit'>Sign up</Button>
           <h1>Sign Out</h1>
-          <Button variant='outline-warning' onClick={doSignOut}>Sign out</Button>
+          <Button variant='warning' onClick={doSignOut}>Sign out</Button>
         </Form>
 
         <h1>Sign In</h1>
@@ -73,9 +73,7 @@ function Signin(){
               name='signinPassword'
               placeholder='Password' />
           </Form.Group>
-          <Link to="/">
-          <Button variant='outline-info' type='submit'>Sign in</Button>
-          </Link>
+          <Button as={Link} to="/" variant='info' type='submit'>Sign in</Button>
         </Form>
       </Container>
     </React.Fragment>

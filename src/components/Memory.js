@@ -2,9 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Memory(props) {
+  const pointer = {
+		listStyle: 'none',
+		cursor: 'pointer',
+	};
   return(
     <React.Fragment>
-      <div onClick = {()=> props.whenMemoryClicked(props.id)}>
+      <div style={pointer} onClick = {()=> props.whenMemoryClicked(props.id)}>
         <h3>{props.title} - {props.date}</h3>
         <h5>{props.place}</h5>
       </div>
