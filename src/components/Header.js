@@ -4,18 +4,22 @@ import Nav from "react-bootstrap/Nav";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import doSignOut from "./Signin";
+import Signin from './Signin';
+import { Link } from "react-router-dom";
+
+const {doSignOut} = Signin;
 
 function Header(props) {
   return (
     <React.Fragment>
       <Navbar sticky="top" expand="lg">
-      <Navbar.Brand href="/">Memory Lane</Navbar.Brand>
+      <Navbar.Brand as ={Link} to="/">Memory Lane</Navbar.Brand>
+      {/* <Link to="/">Memory Lane</Link> */}
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/signin">Sign-in</Nav.Link>
+          <Nav.Link as={Link} to="/">Home</Nav.Link>
+          <Nav.Link as={Link} to="/signin">Sign-in</Nav.Link>
           <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>

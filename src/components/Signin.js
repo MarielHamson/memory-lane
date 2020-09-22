@@ -15,6 +15,7 @@ function Signin(){
       console.log(error.message);
     });
   }
+
   function doSignIn(event) {
     event.preventDefault();
     const email = event.target.signinEmail.value;
@@ -25,6 +26,7 @@ function Signin(){
       console.log(error.message);
     });
   }
+
   function doSignOut() {
     firebase.auth().signOut().then(function() {
       console.log("Successfully signed out!");
@@ -32,6 +34,7 @@ function Signin(){
       console.log(error.message);
     });
   }
+
   return (
     <React.Fragment>
       <Container>
@@ -50,8 +53,8 @@ function Signin(){
               placeholder='Password'/>
           </Form.Group>
           <Button variant='outline-primary' type='submit'>Sign up</Button>
-          {/* <h1>Sign Out</h1>
-          <Button variant='outline-warning' onClick={doSignOut}>Sign out</Button> */}
+          <h1>Sign Out</h1>
+          <Button variant='outline-warning' onClick={doSignOut}>Sign out</Button>
         </Form>
 
         <h1>Sign In</h1>
