@@ -14,7 +14,7 @@ function NewMemoryForm(props) {
 			title: event.target.title.value,
 			date: event.target.date.value,
 			description: event.target.description.value,
-      timeOpen: firestore.FieldValue.serverTimestamp().toDate(),
+      timeOpen: firestore.FieldValue.serverTimestamp(),
       place: event.target.place.value, 
       vibe: event.target.vibe.value,
       scents: event.target.scents.value,
