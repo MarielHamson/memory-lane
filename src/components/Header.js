@@ -12,9 +12,8 @@ const {doSignOut} = Signin;
 function Header(props) {
   return (
     <React.Fragment>
-      <Navbar sticky="top" expand="lg">
+      <Navbar style={{backgroundColor: 'rgba(245, 245, 245, 0.75)'}} sticky="top" expand="lg">
       <Navbar.Brand as ={Link} to="/">Memory Lane</Navbar.Brand>
-      {/* <Link to="/">Memory Lane</Link> */}
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">

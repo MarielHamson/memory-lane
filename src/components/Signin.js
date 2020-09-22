@@ -3,6 +3,7 @@ import firebase from "firebase/app";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import { Link } from "react-router-dom";
 
 function Signin(){
   function doSignUp(event){
@@ -52,6 +53,7 @@ function Signin(){
               name='password'
               placeholder='Password'/>
           </Form.Group>
+
           <Button variant='outline-primary' type='submit'>Sign up</Button>
           <h1>Sign Out</h1>
           <Button variant='outline-warning' onClick={doSignOut}>Sign out</Button>
@@ -71,7 +73,9 @@ function Signin(){
               name='signinPassword'
               placeholder='Password' />
           </Form.Group>
+          <Link to="/">
           <Button variant='outline-info' type='submit'>Sign in</Button>
+          </Link>
         </Form>
       </Container>
     </React.Fragment>
