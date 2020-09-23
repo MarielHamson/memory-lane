@@ -6,6 +6,8 @@ import EditMemoryForm from './EditMemoryForm';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
+import Header from './Header'
+import Container from 'react-bootstrap/Container';
 
 class MemoryControl extends React.Component {
 
@@ -121,8 +123,11 @@ class MemoryControl extends React.Component {
       }
       return(
         <React.Fragment>
+          <Header />
+          <Container className="container">
           {currentlyVisibleState}
           <Button variant="primary" onClick={this.handleClick}>{buttonText}</Button>
+          </Container>
         </React.Fragment>
       )
     }
