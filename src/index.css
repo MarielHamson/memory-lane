@@ -5,29 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/46024/pexels-photo-46024.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); */
-  background: #000000;
-  /* overflow: show; */
-  /* position: relative; */
-  /* background-position: center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/46024/pexels-photo-46024.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  position: relative;
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; */
+  background-attachment: fixed;
 }
 
 h1, h2, h3, h4, h5, p {
   color: white;
 }
 
-/* p.checkbox {
-  color: #fff;
-  font-size: 1.6rem;
-} */
 
-/* input[type="checkbox"] {
-  height: 1rem;
-  width: 1rem;
-} */
 
 
 code {
@@ -35,19 +25,6 @@ code {
     monospace;
   }
   
-main {
-  z-index: 2;
-  color: rgb((255, 255, 255)134, 2, 2);
-  position: relative;
-}
-  /* top: 50%; */
-    /* left: 1.6rem; */
-    /* transform: translateY(-50%);
-
-
-/* p {
-  padding: 0.8rem 0 0 0;
-} */
 
 .container {
   position: relative;
