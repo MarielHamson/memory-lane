@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import Header from "./Header";
 import Container from "react-bootstrap/Container";
+import SearchList from './SearchList';
 
 class MemoryControl extends React.Component {
   constructor(props) {
@@ -47,7 +48,7 @@ class MemoryControl extends React.Component {
       formVisibleOnPage: false,
     });
   };
-
+  
   handleChangingSelectedMemory = (id) => {
     this.props.firestore
       .get({ collection: "memories", doc: id })
@@ -84,6 +85,9 @@ class MemoryControl extends React.Component {
   };
 
   handleSearchQuery = (searchObject) => {
+    // searchObject.forEach(doc => {
+    //   console.log(doc.id, '=>', doc.data());
+    // });
     this.setState({ search: searchObject})
   }
 
@@ -118,6 +122,11 @@ class MemoryControl extends React.Component {
           />
         );
         buttonText = "Return to Memory List";
+      } else if (this.state.search != null) {
+        currentlyVisibleState = (
+          <SearchList onSearchQuery={this.state.search} />
+        );
+        buttonText = "Return to Memory List";
       } else if (this.state.selectedMemory != null) {
         currentlyVisibleState = (
           <MemoryDetail
@@ -134,7 +143,7 @@ class MemoryControl extends React.Component {
         buttonText = "Return to Memory List";
       } else {
         currentlyVisibleState = (
-          <MemoryList onMemorySelection={this.handleChangingSelectedMemory} onSearchQuery={this.state.search} />
+          <MemoryList onMemorySelection={this.handleChangingSelectedMemory} />
         );
         buttonText = "Add Memory";
       }

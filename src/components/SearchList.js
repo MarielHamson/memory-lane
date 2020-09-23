@@ -4,32 +4,34 @@ import Memory from './Memory';
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
 
-function MemoryList(props) {
-	// const { onSearchQuery } = props;
+function SearchList(props) {
+	const { onSearchQuery } = props;
 
-		// if (onSearchQuery == null){
-		// 	onSearchQuery.forEach(doc => {
-		// 		console.log(doc.data());
-		// });
-		// }
-
-		// if (onSearchQuery != null){
-		// 	let output = onSearchQuery.forEach(doc => {console.log(doc.data())});
-		// 	// (doc.id, '=>', doc.data());
-		
-		// }
+	// if (onSearchQuery == null){
+	// 	onSearchQuery.forEach(doc => {
+	// 		console.log(doc.data());
+	// });
+	// }
+  useFirestoreConnect([{ collection: 'memories' }]);
+  console.log(onSearchQuery)
+  // const searchReturn = (onSearchQuery) => {
+	// 	if (onSearchQuery != null){
+  //     const memories = onSearchQuery.doc.data();
+  //     console.log(memories)
+	// 		return memories;
+	// 	}
+	// }
 	
-	useFirestoreConnect([{ collection: 'memories' }]);
+	// const memories = searchReturn(onSearchQuery);
 
-	const memories = useSelector((state) => state.firestore.ordered.memories);
 
-	console.log(memories)
-	if (isLoaded(memories)) {
+	// console.log(memories)
+	if (isLoaded(onSearchQuery)) {
 		return (
 			<React.Fragment>
-				<h1 style={{textAlign: 'center'}}>Memory Lane</h1>
+				<h1 style={{textAlign: 'center'}}>Search List</h1>
 				<hr />
-					{memories.map((memory) => {
+					{onSearchQuery.map((memory) => {
 						return (
 							<Memory
 								whenMemoryClicked={props.onMemorySelection}
@@ -57,9 +59,9 @@ function MemoryList(props) {
 	}
 }
 
-MemoryList.propTypes = {
+SearchList.propTypes = {
 	onMemorySelection: PropTypes.func,
 	onSearchQuery: PropTypes.object
 };
 
-export default MemoryList;
+export default SearchList;

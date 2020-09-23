@@ -4,7 +4,6 @@ import Nav from "react-bootstrap/Nav";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import NavDropdown from "react-bootstrap/NavDropdown";
-// import Signin from "./Signin";
 import { Link } from "react-router-dom";
 import { useFirestore } from 'react-redux-firebase';
 import { withFirestore } from "react-redux-firebase";
@@ -12,7 +11,6 @@ import PropTypes from 'prop-types';
 import { useHistory } from "react-router-dom";
 import firebase from 'firebase';
 
-// const { doSignOut } = Signin;
 
 function Header(props) {
   const history = useHistory();
@@ -27,11 +25,21 @@ function Header(props) {
       console.log("no matches");
       return;
     }
-    snapshot.forEach(doc => {
-      console.log(doc.id, '=>', doc.data());
+    // let dataObj = [];
+    // snapshot.forEach(doc => {
+    //   const documentId = doc.id;
+    //   dataObj.push({documentId, ...doc.data()});
+    //   // {...dataObj, doc.id: {...doc.data()}}
+      
+    // });
+    // console.log(dataObj)
+    const memory = snapshot.docs.map(doc => {
+      const documentId = doc.id;
+      const myObj = {documentId, ...doc.data()};
+      return myObj;
     });
-
-    props.onSearchQuery(snapshot);
+    console.log(memory);
+    props.onSearchQuery(memory);
   }
 
   function doSignOut() {
