@@ -5,34 +5,37 @@ import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
 
 function MemoryList(props) {
+if (props.onSearch != null){
 
+
+}
 	useFirestoreConnect([{ collection: 'memories' }]);
 
 	const memories = useSelector((state) => state.firestore.ordered.memories);
-
+	
 	if (isLoaded(memories)) {
 		return (
 			<React.Fragment>
 				<h1 style={{textAlign: 'center'}}>Memory Lane</h1>
 				<hr />
-				{memories.map((memory) => {
-					// console.log(memories);
-					return (
-						<Memory
-							whenMemoryClicked={props.onMemorySelection}
-							title={memory.title}
-							date={memory.date}
-							description={memory.description}
-              timeOpen={memory.timeOpen}
-              place={memory.place}    
-              vibe={memory.vibe}
-              scents={memory.scents}
-              keywords={memory.keywords}
-							id={memory.id}
-							key={memory.id}
-						/>
-					);
-				})}
+					{memories.map((memory) => {
+						// console.log(memories);
+						return (
+							<Memory
+								whenMemoryClicked={props.onMemorySelection}
+								title={memory.title}
+								date={memory.date}
+								description={memory.description}
+								timeOpen={memory.timeOpen}
+								place={memory.place}    
+								vibe={memory.vibe}
+								scents={memory.scents}
+								keywords={memory.keywords}
+								id={memory.id}
+								key={memory.id}
+							/>
+						);
+					})}
 			</React.Fragment>
 		);
 	} else {
@@ -46,6 +49,7 @@ function MemoryList(props) {
 
 MemoryList.propTypes = {
 	onMemorySelection: PropTypes.func,
+	onSearchQuery: PropTypes.object
 };
 
 export default MemoryList;

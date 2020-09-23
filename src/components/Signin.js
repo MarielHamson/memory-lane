@@ -94,14 +94,6 @@ function Signin() {
             />
           </Form.Group>
 
-          {/* <LinkButton to="/" variant='info' type='submit'>Sign in</LinkButton> */}
-          {/* <Link to='/'>
-            <button type="submit" variant="info">Submit</button>
-          </Link> */}
-          {/* <Link to='/'>
-          <button as={Link} to='/' variant='info' type='submit'>Sign in</button>
-          </Link> */}
-
           <Button type="submit" variant="info">
             Sign in
           </Button>
@@ -110,5 +102,5 @@ function Signin() {
     </React.Fragment>
   );
 }
-// onClick={() => history.goBack('/')}history.push("/home")
+
 export default Signin;

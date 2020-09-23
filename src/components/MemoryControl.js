@@ -16,6 +16,7 @@ class MemoryControl extends React.Component {
       formVisibleOnPage: false,
       selectedMemory: null,
       editing: false,
+      search: null,
     };
   }
 
@@ -82,6 +83,10 @@ class MemoryControl extends React.Component {
     this.setState({ selectedMemory: null });
   };
 
+  handleSearchQuery = (searchObject) => {
+    this.setState({ search: searchObject})
+  }
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -129,13 +134,13 @@ class MemoryControl extends React.Component {
         buttonText = "Return to Memory List";
       } else {
         currentlyVisibleState = (
-          <MemoryList onMemorySelection={this.handleChangingSelectedMemory} />
+          <MemoryList onMemorySelection={this.handleChangingSelectedMemory} onSearchQuery={this.state.search} />
         );
         buttonText = "Add Memory";
       }
       return (
         <React.Fragment>
-          <Header className="header" />
+          <Header className="header" onSearchQuery={this.handleSearchQuery} />
           <Container className="container">
             {currentlyVisibleState}
             <Button variant="primary" onClick={this.handleClick}>
