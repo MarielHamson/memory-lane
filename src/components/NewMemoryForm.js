@@ -25,7 +25,6 @@ function NewMemoryForm(props) {
 	return (
 		<React.Fragment>
 			<ReusableForm
-				// Don't forget to change the name of the function here as well.
 				formSubmissionHandler={addMemoryToFirestore}
 				buttonText="Remember for me!"
 			/>

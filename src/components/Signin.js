@@ -3,8 +3,6 @@ import firebase from "firebase/app";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-// import { Link } from "react-router-dom";
-// import LinkButton from './LinkButton'
 import { useHistory } from "react-router-dom";
 import Header from "./Header";
 

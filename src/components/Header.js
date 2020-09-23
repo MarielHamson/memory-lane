@@ -112,32 +112,3 @@ Header.propTypes = {
 }
 
 export default withFirestore(Header);
-
-// const searchTerms = ["cats", "dogs", "people", "birds"];
-// const counter = 0;
-// const emptyArray = [];
-
-
-// const search = (search, counter, emptyArray) => {
-//   const search2 = search;
-//   const returnArray = emptyArray;
-//   if (counter < search.length) {
-//     const query = emptyArray.concat(
-//       this.props.firestore
-//         .collection("memories")
-//         .where("keywords", "==", search[counter])
-//     );
-//     const counter2 = counter + 1;
-//     return search(search2, counter2, query);
-//   }
-//   return returnArray;
-// };
-// const answer = search();
-
-// const searchTerm = "rick";
-// const test = "frederick";
-// const regex = new RegExp(searchTerm, 'gi');
-
-// const partialMatch = test.match(regex);
-
-// console.log(partialMatch);

@@ -85,9 +85,6 @@ class MemoryControl extends React.Component {
   };
 
   handleSearchQuery = (searchObject) => {
-    // searchObject.forEach(doc => {
-    //   console.log(doc.id, '=>', doc.data());
-    // });
     this.setState({ search: searchObject})
   }
 
