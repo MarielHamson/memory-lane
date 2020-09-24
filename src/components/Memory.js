@@ -10,20 +10,17 @@ function Memory(props) {
 	return (
 			<React.Fragment>
 					<div style={myStyledList} onClick={() => props.whenMemoryClicked(props.id)}>
-						<Card style={{ width: '18rem' }} bg="secondary" text="light">
+						<Card style={{ width: '18rem' }}  bg="light" text="light">
+						<Card.Header className='text-muted'>Memory</Card.Header>
 							<Card.Body>
-								<Card.Title>{props.title}</Card.Title>
+								<Card.Title className='text-muted'>{props.title}</Card.Title>
 								<Card.Subtitle className="mb-2 text-muted">
 									{props.date}
 								</Card.Subtitle>
-								<Card.Text>
-									<ul style={myStyledList}>
-										<li>{props.place}</li>
-									</ul>
-								</Card.Text>
+								<Card.Text className='text-muted'>{props.place}</Card.Text>
 							</Card.Body>
 							</Card>
-					</div>
+						</div>
 					<hr />
 			</React.Fragment>
 	);

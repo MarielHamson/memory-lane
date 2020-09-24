@@ -1,31 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Memory from './Memory';
-import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
 
 function SearchList(props) {
 	const { onSearchQuery } = props;
 
-	// if (onSearchQuery == null){
-	// 	onSearchQuery.forEach(doc => {
-	// 		console.log(doc.data());
-	// });
-	// }
-  useFirestoreConnect([{ collection: 'memories' }]);
-  console.log(onSearchQuery)
-  // const searchReturn = (onSearchQuery) => {
-	// 	if (onSearchQuery != null){
-  //     const memories = onSearchQuery.doc.data();
-  //     console.log(memories)
-	// 		return memories;
-	// 	}
-	// }
+	useFirestoreConnect([{ collection: 'memories' }]);
 	
-	// const memories = searchReturn(onSearchQuery);
+	console.log(onSearchQuery[0].documentId)
+	
+	// onMemorySelection(id);
 
-
-	// console.log(memories)
 	if (isLoaded(onSearchQuery)) {
 		return (
 			<React.Fragment>
@@ -43,8 +29,8 @@ function SearchList(props) {
 								vibe={memory.vibe}
 								scents={memory.scents}
 								keywords={memory.keywords}
-								id={memory.id}
-								key={memory.id}
+								id={memory.documentId}
+								key={memory.documentId}
 							/>
 						);
 					})}
@@ -61,7 +47,8 @@ function SearchList(props) {
 
 SearchList.propTypes = {
 	onMemorySelection: PropTypes.func,
-	onSearchQuery: PropTypes.object
+	onSearchQuery: PropTypes.object,
+	id: PropTypes.string
 };
 
 export default SearchList;

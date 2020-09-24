@@ -35,7 +35,14 @@ class MemoryControl extends React.Component {
       this.setState({
         selectedMemory: null,
         editing: false,
+        search: null,
       });
+    } else if (this.state.search != null) {
+        this.setState({
+          selectedMemory: null,
+          editing: false,
+          search: null,
+        });
     } else {
       this.setState((prevState) => ({
         formVisibleOnPage: !prevState.formVisibleOnPage,
@@ -53,6 +60,7 @@ class MemoryControl extends React.Component {
     this.props.firestore
       .get({ collection: "memories", doc: id })
       .then((memory) => {
+        console.log(id)
         const firestoreMemory = {
           title: memory.get("title"),
           date: memory.get("date"),
@@ -64,7 +72,7 @@ class MemoryControl extends React.Component {
           keywords: memory.get("keywords"),
           id: id,
         };
-        this.setState({ selectedMemory: firestoreMemory });
+        this.setState({ search: null, selectedMemory: firestoreMemory });
       });
   };
 
@@ -121,7 +129,8 @@ class MemoryControl extends React.Component {
         buttonText = "Return to Memory List";
       } else if (this.state.search != null) {
         currentlyVisibleState = (
-          <SearchList onSearchQuery={this.state.search} />
+          <SearchList onSearchQuery={this.state.search}
+          onMemorySelection={this.handleChangingSelectedMemory} />
         );
         buttonText = "Return to Memory List";
       } else if (this.state.selectedMemory != null) {

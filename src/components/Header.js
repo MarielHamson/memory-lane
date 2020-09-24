@@ -15,24 +15,21 @@ import firebase from 'firebase';
 function Header(props) {
   const history = useHistory();
   const firestore = useFirestore();
+
   async function handleSearchQuery(event) {
     event.preventDefault();
+    const propertiesToQuery = event.target.title.value.toLowerCase();
     
-    const propertiesToQuery = event.target.title.value;
-    
-    const snapshot = await firestore.collection('memories').where("title", "==", propertiesToQuery).get();
+    // const propertiesToQuery2 = event.target.scents.value.toLowerCase();
+// .where("scents".toLowerCase(), "==", propertiesToQuery2)
+
+    const snapshot = await firestore.collection('memories').where("title", "==", propertiesToQuery)
+    .get();
     if (snapshot.empty) {
       console.log("no matches");
       return;
     }
-    // let dataObj = [];
-    // snapshot.forEach(doc => {
-    //   const documentId = doc.id;
-    //   dataObj.push({documentId, ...doc.data()});
-    //   // {...dataObj, doc.id: {...doc.data()}}
-      
-    // });
-    // console.log(dataObj)
+
     const memory = snapshot.docs.map(doc => {
       const documentId = doc.id;
       const myObj = {documentId, ...doc.data()};
@@ -90,9 +87,15 @@ function Header(props) {
             <Form.Control
               type="text"
               name="title"
-              placeholder="Search"
+              placeholder="title"
               className="mr-sm-2"
             />
+            {/* <Form.Control
+              type="text"
+              name="scents"
+              placeholder="scents"
+              className="mr-sm-2"
+            /> */}
             <Button variant="success" type='submit'>Search</Button>
           </Form>
           <Form inline>

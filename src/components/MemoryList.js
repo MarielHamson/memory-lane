@@ -31,6 +31,7 @@ function MemoryList(props) {
 				<hr />
 					{memories.map((memory) => {
 						return (
+
 							<Memory
 								whenMemoryClicked={props.onMemorySelection}
 								title={memory.title}
