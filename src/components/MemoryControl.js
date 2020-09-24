@@ -60,7 +60,6 @@ class MemoryControl extends React.Component {
     this.props.firestore
       .get({ collection: "memories", doc: id })
       .then((memory) => {
-        console.log(id)
         const firestoreMemory = {
           title: memory.get("title"),
           date: memory.get("date"),

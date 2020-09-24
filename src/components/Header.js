@@ -20,22 +20,37 @@ function Header(props) {
     event.preventDefault();
     const propertiesToQuery = event.target.title.value.toLowerCase();
     
-    // const propertiesToQuery2 = event.target.scents.value.toLowerCase();
+    const propertiesToQuery2 = event.target.scents.value.toLowerCase();
 // .where("scents".toLowerCase(), "==", propertiesToQuery2)
 
-    const snapshot = await firestore.collection('memories').where("title", "==", propertiesToQuery)
+    const snapshot = await firestore.collection('memories').where("title", ">=", propertiesToQuery).where("title", "<=", propertiesToQuery2).where("title", "<=", propertiesToQuery2)
     .get();
     if (snapshot.empty) {
       console.log("no matches");
       return;
     }
+    // const snapshot2 = await firestore.collection('memories').where("scents", ">=", propertiesToQuery)
+    // .get();
+    // if (snapshot.empty) {
+    //   console.log("no matches");
+    //   return;
+    // }
 
     const memory = snapshot.docs.map(doc => {
       const documentId = doc.id;
       const myObj = {documentId, ...doc.data()};
       return myObj;
     });
-    console.log(memory);
+
+    // const memory2 = snapshot2.docs.map(doc => {
+    //   const documentId = doc.id;
+    //   const myObj = {documentId, ...doc.data()};
+    //   return myObj;
+    // });
+
+    // const memory3 = {memory, ...memory2};
+
+    // console.log(memory3);
     props.onSearchQuery(memory);
   }
 
@@ -90,12 +105,12 @@ function Header(props) {
               placeholder="title"
               className="mr-sm-2"
             />
-            {/* <Form.Control
+            <Form.Control
               type="text"
               name="scents"
               placeholder="scents"
               className="mr-sm-2"
-            /> */}
+            />
             <Button variant="success" type='submit'>Search</Button>
           </Form>
           <Form inline>
